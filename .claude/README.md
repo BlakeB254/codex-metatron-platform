@@ -1,19 +1,38 @@
-# CDX Metatron Platform - Claude Code Development Guide
+# Claude Code Development Context
 
-## Project Overview
-- **Project Name**: Codex Metatron Platform
-- **Type**: Complex AI SAAS - Multi-Tenant Microservices Platform
-- **Status**: ✅ **PRODUCTION READY** (Core Architecture Complete)
-- **Location**: Documents/GitHub/codex-metatron-platform/
+This directory contains Claude Code's development context and memory for the Codex Metatron Platform project.
+
+## 🤖 For Claude Code
+
+This documentation is specifically for Claude Code to understand the project context, architecture decisions, and development state.
+
+### Project Context Files
+- `project/PRD.md` - Product requirements and business context
+- `project/tech-stack-doc.md` - Technology decisions and rationale  
+- `project/cms-architecture.md` - CMS system architecture
+- `development/` - Development guidelines and patterns
+- `security/` - Security implementation details
+- `deployment/` - Deployment configurations and procedures
+- `integration/` - Integration patterns and API documentation
+
+### Session Memory
+- `SESSION_SUMMARY.md` - Latest development session summary
+- `CURRENT_STATUS.md` - Current project state and active tasks
+- `FINAL_STATUS.md` - Completed tasks and achievements
+
+### Architecture Context
+- `MULTI_DATABASE_ARCHITECTURE.md` - Database design and multi-tenant architecture
+
+## 👨‍💻 For Human Developers
+
+**For human-readable documentation, guides, and tutorials, see the [`docs/`](../docs/) directory instead.**
 
 ## Quick Start for Claude Code
 1. Read this file for immediate context
-2. **LATEST**: Check `.claude/MULTI_DATABASE_ARCHITECTURE.md` for complete multi-DB implementation
-3. **LATEST**: Review `.claude/SESSION_SUMMARY.md` for current session accomplishments
-4. Check `.claude/integration/` for comprehensive integration and permission system documentation  
-5. **CRITICAL**: Use multi-database patterns from `/services/auth-service/src/multi-db-auth.ts`
-6. Review `/config/database-connections.js` for service database connections
-7. Follow federated database architecture with service isolation
+2. Check `project/` for business requirements and tech decisions
+3. Review `development/` for coding patterns and component guidelines
+4. See `integration/` for API and authentication patterns
+5. Check session files for current development state
 
 ## Project Type: Complex AI SAAS
 - [x] **Local Project** (Personal usage, full control)

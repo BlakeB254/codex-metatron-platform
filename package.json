@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "validate:db": "node scripts/validate-database.js",
+    "test:neon-local": "node scripts/test-neon-locally.js",
     "dev": "concurrently \"npm run dev:gateway\" \"npm run dev:admin\"",
     "dev:gateway": "cd services/api-gateway && npm run dev",
     "dev:crm": "cd services/crm-service && npm run dev",
