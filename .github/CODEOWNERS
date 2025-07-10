@@ -1,0 +1,41 @@
+# Global ownership
+* @codexmetatron
+
+# Platform core
+/package.json @codexmetatron
+/nx.json @codexmetatron
+/tsconfig.base.json @codexmetatron
+/.github/ @codexmetatron
+
+# Documentation
+/docs/ @codexmetatron
+/README.md @codexmetatron
+/extraction-strategy.md @codexmetatron
+
+# Shared libraries (require platform team approval)
+/libs/ @codexmetatron
+
+# Infrastructure and deployment
+/docker-compose.yml @codexmetatron
+/deployment/ @codexmetatron
+/scripts/ @codexmetatron
+
+# Database schemas (require careful review)
+/database/ @codexmetatron
+
+# Apps (can be owned by feature teams in future)
+/apps/cdx-pharaoh/ @codexmetatron
+/apps/core-server/ @codexmetatron
+/apps/client-template/ @codexmetatron
+
+# Services (ready for team ownership)
+/services/api-gateway/ @codexmetatron
+/services/auth-service/ @codexmetatron
+/services/crm-service/ @codexmetatron
+/services/analytics-service/ @codexmetatron
+/services/notification-service/ @codexmetatron
+
+# Future team assignments (examples):
+# /services/auth-service/ @auth-team
+# /services/crm-service/ @crm-team
+# /apps/cdx-pharaoh/ @frontend-team

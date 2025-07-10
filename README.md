@@ -1,10 +1,80 @@
-# 
+# Codex Metatron Platform
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+A multi-tenant microservices platform for managing 1000+ client applications with comprehensive admin tools, real-time monitoring, and scalable CMS integration.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## 🏗️ Architecture Overview
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   CDXPharaoh    │    │   Core Server   │    │ Client Template │
+│ (SuperAdmin)    │    │ (API Gateway)   │    │  (Next.js App)  │
+│ React + Vite    │────│ Express + TS    │────│  Multi-tenant   │
+│     Port 5173   │    │    Port 3000    │    │    Port 3001    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+                                │
+                    ┌───────────┼───────────┐
+                    │           │           │
+            ┌───────▼───┐ ┌─────▼─────┐ ┌───▼─────┐
+            │    CMS    │ │   Auth    │ │ Billing │
+            │ Service   │ │ Service   │ │ Service │
+            │Port 3007  │ │Port 3001  │ │Port 3002│
+            └───────────┘ └───────────┘ └─────────┘
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- PostgreSQL client tools (psql)
+- Neon PostgreSQL Database (or local PostgreSQL)
+- Git
+
+### 1. Clone and Setup
+```bash
+git clone <your-repo-url>
+cd codex-metatron-platform
+
+# Copy and configure environment
+cp .env.example .env
+# Edit .env file with your DATABASE_URL from Neon
+```
+
+### 2. Database Setup
+```bash
+# Initialize the master database schema
+./scripts/setup-database.sh
+```
+
+### 3. Start Platform
+```bash
+# Start all services (Core API + Pharaoh Admin)
+./scripts/start-platform.sh
+```
+
+### 4. Access Applications
+- **Pharaoh Admin Panel**: http://localhost:5173
+- **Core API Server**: http://localhost:3000
+- **Default Login**: superadmin@codexmetatron.com / changeme123
+
+⚠️ **IMPORTANT**: Change the default password immediately!
+
+# Optional: Seed with sample data
+npm run db:seed
+```
+
+### 3. Start Development
+```bash
+# Start core server and admin dashboard
+npm run dev
+
+# Or start all services
+npm run dev:all
+```
+
+### 4. Access Applications
+- **CDXPharaoh (SuperAdmin)**: http://localhost:5173
+- **Core API Server**: http://localhost:3000
+- **Health Check**: http://localhost:3000/health
 
 ## Generate a library
 

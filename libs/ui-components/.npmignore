@@ -1,0 +1,42 @@
+# Source files
+src/
+stories/
+docs/
+
+# Development files
+.storybook/
+*.config.js
+*.config.ts
+.eslintrc.js
+jest.config.js
+tsconfig.json
+
+# Testing
+**/*.test.*
+**/*.spec.*
+**/*.stories.*
+coverage/
+.nyc_output/
+
+# Development dependencies
+node_modules/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# Environment variables
+.env*
+
+# Temporary files
+*.tmp
+*.temp
