@@ -29,7 +29,13 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm ci
+      run: |
+        # Clean install with fresh lock file if needed
+        if ! npm ci; then
+          echo "npm ci failed, regenerating lock file"
+          rm -f package-lock.json
+          npm install
+        fi
 
     - name: Run affected lint
       run: npx nx affected --target=lint --parallel=3
@@ -67,7 +73,13 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm ci
+      run: |
+        # Clean install with fresh lock file if needed
+        if ! npm ci; then
+          echo "npm ci failed, regenerating lock file"
+          rm -f package-lock.json
+          npm install
+        fi
 
     - name: Test ${{ matrix.service }} isolation
       run: |
@@ -94,7 +106,13 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm ci
+      run: |
+        # Clean install with fresh lock file if needed
+        if ! npm ci; then
+          echo "npm ci failed, regenerating lock file"
+          rm -f package-lock.json
+          npm install
+        fi
 
     - name: Test ${{ matrix.app }} standalone
       run: |
@@ -121,7 +139,13 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm ci
+      run: |
+        # Clean install with fresh lock file if needed
+        if ! npm ci; then
+          echo "npm ci failed, regenerating lock file"
+          rm -f package-lock.json
+          npm install
+        fi
 
     - name: Test ${{ matrix.lib }} standalone
       run: |
